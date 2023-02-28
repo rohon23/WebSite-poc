@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.section-header {
+    width: 100%;
+    height: 80px;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    transition: height 1.2s ease;
+    position: fixed;
+    z-index: 2;
+}
+
+.section-header.active {
+    height: 410px;
+    flex-wrap: wrap;
+    transition: height 0.6s ease;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #006241;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-bar ul {
+    display: flex;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #006241;
+    font-weight: 700;
+    font-family: PikeBold, Arial;
+    letter-spacing: 2px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.nav-bar ul li a:hover {
+    color: #fefefe;
+    background: #006241;
+}
+
+.nav-bar ul li a:active {
+    color: #fefefe;
+    background: #006241;
+}
+
+@media only screen and (max-width: 1320px) {
+    .section-header {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .section-header {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .section-header {
+        padding: 0 30px;
+        flex-wrap: wrap;
+        position: unset;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background: #006241;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        display: flex;
+        height: 0;
+        width: 100vw;
+        background: #f7f7f7;
+        transition: height 1s ease;
+        overflow: hidden;
+    }
+
+    .nav-bar.active {
+
+        height: 300px;
+        transition: height 1s ease;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 30px auto 20px auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 1;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+}
